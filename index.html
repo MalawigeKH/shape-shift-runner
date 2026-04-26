@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shape Shift Runner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- SKIN SELECT -->
+<div id="skins">
+  <p>Select Skin:</p>
+  <button onclick="setSkin('red')">Red</button>
+  <button onclick="setSkin('blue')">Blue</button>
+  <button onclick="setSkin('green')">Green</button>
+</div>
+<body>
+
+<h2>Shape Shift Runner</h2>
+<p id="score">Score: 0</p>
+
+<!-- MENU -->
+<div id="menu">
+  <h1>Shape Shift Runner</h1>
+  <button onclick="startGame()">Start Game</button>
+</div>
+
+<!-- GAME -->
+<div id="game">
+  <div id="player" class="square"></div>
+  <div id="obstacle"></div>
+</div>
+
+<!-- GAME OVER -->
+<div id="gameOver">
+  <h2>Game Over</h2>
+  <p id="finalScore"></p>
+  <button onclick="restartGame()">Restart</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+body {
+  background: black;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* =========================
+   GAME CONTAINER
+========================= */
+#game {
+  width: 600px;
+  height: 200px;
+  border: 2px solid white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  background: #111;
+}
+
+/* =========================
+   MENU + GAME OVER UI
+========================= */
+#menu, #gameOver {
+  margin-top: 60px;
+  animation: fadeIn 0.5s;
+}
+
+#gameOver {
+  display: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: orange;
+}
+
+/* =========================
+   SCORE TEXT
+========================= */
+#score {
+  font-size: 18px;
+}
+
+/* =========================
+   PLAYER
+========================= */
+#player {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  transition: transform 0.1s;
+}
+
+/* Shapes */
+.square {
+  width: 40px;
+  height: 40px;
+  background: red;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background: red;
+  border-radius: 50%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid red;
+}
+
+/* Jump animation */
+.jump {
+  transform: scaleY(1.2);
+}
+
+/* =========================
+   OBSTACLE
+========================= */
+#obstacle {
+  position: absolute;
+  bottom: 0;
+  left: 600px;
+  transition: transform 0.1s;
+}
+
+/* =========================
+   COIN
+========================= */
+#coin {
+  width: 20px;
+  height: 20px;
+  background: gold;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 60px;
+  left: 800px;
+  animation: spin 1s linear infinite;
+}
+
+/* Coin spin */
+@keyframes spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* =========================
+   POWER-UP
+========================= */
+#power {
+  width: 25px;
+  height: 25px;
+  background: purple;
+  position: absolute;
+  bottom: 80px;
+  left: 1000px;
+  border-radius: 5px;
+}
+
+/* =========================
+   TRAIL EFFECT
+========================= */
+.trail {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: red;
+  opacity: 0.4;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeTrail 0.5s forwards;
+}
+
+@keyframes fadeTrail {
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 0.5s forwards;
+}
+
+@keyframes explode {
+  to {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* =========================
+   SCREEN SHAKE
+========================= */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(5px,-5px); }
+  50% { transform: translate(-5px,5px); }
+  75% { transform: translate(5px,5px); }
+  100% { transform: translate(0,0); }
+}
+
+/* =========================
+   COMBO TEXT
+========================= */
+.combo {
+  position: absolute;
+  color: yellow;
+  font-size: 20px;
+  animation: comboPop 0.5s forwards;
+}
+
+@keyframes comboPop {
+  from { transform: scale(0.5); opacity: 1; }
+  to { transform: scale(1.5); opacity: 0; }
+}
+
+/* =========================
+   SKINS
+========================= */
+.red { background: red !important; }
+.blue { background: blue !important; }
+.green { background: green !important; }
+
+/* =========================
+   UI ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* =========================
+   SKIN SELECT UI (optional)
+========================= */
+#skins {
+  margin-top: 10px;
+}
